@@ -24,7 +24,7 @@
   <parent>
     <groupId>org.jboss.osgi.http</groupId>
     <artifactId>jboss-osgi-http-parent</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2-SNAPSHOT</version>
   </parent>
 
   <!-- Properties -->
