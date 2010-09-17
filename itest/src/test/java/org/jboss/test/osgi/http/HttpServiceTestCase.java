@@ -35,8 +35,8 @@ import java.net.URL;
 import org.jboss.osgi.http.HttpServiceCapability;
 import org.jboss.osgi.testing.OSGiFrameworkTest;
 import org.jboss.osgi.testing.OSGiManifestBuilder;
-import org.jboss.shrinkwrap.api.Archives;
-import org.jboss.shrinkwrap.api.Asset;
+import org.jboss.shrinkwrap.api.ShrinkWrap;
+import org.jboss.shrinkwrap.api.asset.Asset;
 import org.jboss.shrinkwrap.api.spec.JavaArchive;
 import org.jboss.test.osgi.http.bundle.EndpointServlet;
 import org.jboss.test.osgi.http.bundle.HttpServiceTestActivator;
@@ -82,7 +82,7 @@ public class HttpServiceTestCase extends OSGiFrameworkTest
       if (testBundle == null)
       {
          // Build a test bundle with shrinkwrap
-         final JavaArchive archive = Archives.create("http-service-test", JavaArchive.class);
+         final JavaArchive archive = ShrinkWrap.create(JavaArchive.class, "http-service-test");
          archive.addClass(HttpServiceTestActivator.class);
          archive.addClass(EndpointServlet.class);
          archive.addResource(getResourceFile("http/message.txt"), "res/message.txt");
