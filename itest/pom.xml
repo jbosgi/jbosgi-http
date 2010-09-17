@@ -29,7 +29,7 @@
 
   <!-- Properties -->
   <properties>
-    <version.jboss.osgi.common>1.0.6-SNAPSHOT</version.jboss.osgi.common>
+    <version.jboss.osgi.common>1.0.6</version.jboss.osgi.common>
     <version.jboss.osgi.felix>3.0.1</version.jboss.osgi.felix>
     <version.jboss.osgi.vfs>1.0.1</version.jboss.osgi.vfs>
   </properties>
