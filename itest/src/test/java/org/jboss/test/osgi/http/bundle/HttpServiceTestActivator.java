@@ -21,8 +21,6 @@
  */
 package org.jboss.test.osgi.http.bundle;
 
-//$Id: ServiceActivator.java 87329 2009-04-15 10:34:21Z thomas.diesler@jboss.com $
-
 import java.util.Properties;
 
 import org.osgi.framework.BundleActivator;
@@ -33,14 +31,14 @@ import org.osgi.util.tracker.ServiceTracker;
 
 /**
  * A Service Activator
- * 
+ *
  * @author thomas.diesler@jboss.com
  * @since 04-Feb-2009
  */
 public class HttpServiceTestActivator implements BundleActivator
 {
    private ServiceTracker tracker;
-   
+
    public void start(BundleContext context)
    {
       tracker = new ServiceTracker(context, HttpService.class.getName(), null)

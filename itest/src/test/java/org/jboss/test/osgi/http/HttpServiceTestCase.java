@@ -25,12 +25,9 @@ package org.jboss.test.osgi.http;
 
 import static org.jboss.osgi.http.HttpServiceCapability.DEFAULT_HTTP_SERVICE_PORT;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
 
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.URL;
 
 import org.jboss.osgi.http.HttpServiceCapability;
 import org.jboss.osgi.testing.OSGiFrameworkTest;
@@ -41,38 +38,18 @@ import org.jboss.shrinkwrap.api.spec.JavaArchive;
 import org.jboss.test.osgi.http.bundle.EndpointServlet;
 import org.jboss.test.osgi.http.bundle.HttpServiceTestActivator;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import org.osgi.framework.Bundle;
-import org.osgi.framework.BundleContext;
-import org.osgi.framework.ServiceReference;
-import org.osgi.framework.launch.Framework;
-import org.osgi.service.http.HttpService;
 
 /**
  * An HttpService test case.
- * 
+ *
  * @author thomas.diesler@jboss.com
  * @since 19-Apr-2010
  */
 public class HttpServiceTestCase extends OSGiFrameworkTest
 {
    private static Bundle testBundle;
-
-   @BeforeClass
-   public static void beforeClass() throws Exception
-   {
-      // Install/Start the jboss-osgi-http bundle
-      String bundleName = "jboss-osgi-http-" + System.getProperty("project.version");
-      URL bundleURL = new File("../bundle/target/" + bundleName + ".jar").toURI().toURL();
-
-      Framework framework = createFramework();
-      framework.start();
-      
-      BundleContext systemContext = framework.getBundleContext();
-      Bundle bundle = systemContext.installBundle(bundleURL.toExternalForm());
-      bundle.start();
-   }
 
    @Before
    public void setUp() throws Exception
@@ -104,10 +81,6 @@ public class HttpServiceTestCase extends OSGiFrameworkTest
          testBundle = installBundle(archive);
          testBundle.start();
          assertBundleState(Bundle.ACTIVE, testBundle.getState());
-
-         // Allow 10s for the HttpService to become available
-         ServiceReference sref = getServiceReference(HttpService.class.getName(), 10000);
-         assertNotNull("HttpService available", sref);
       }
    }
 

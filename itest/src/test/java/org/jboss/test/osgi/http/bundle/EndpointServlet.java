@@ -21,8 +21,6 @@
  */
 package org.jboss.test.osgi.http.bundle;
 
-//$Id: EndpointServlet.java 87329 2009-04-15 10:34:21Z thomas.diesler@jboss.com $
-
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -40,7 +38,7 @@ public class EndpointServlet extends HttpServlet
 {
   private BundleContext context;
 
-  // This hides the default ctor and verifies that this instance is used 
+  // This hides the default ctor and verifies that this instance is used
   public EndpointServlet(BundleContext context)
   {
     this.context = context;
@@ -50,7 +48,7 @@ public class EndpointServlet extends HttpServlet
   protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException
   {
     PrintWriter out = res.getWriter();
-    
+
     String testParam = req.getParameter("test");
     if ("plain".equals(testParam))
     {
@@ -69,7 +67,7 @@ public class EndpointServlet extends HttpServlet
     {
       ServiceTracker tracker = new ServiceTracker(context, StartLevel.class.getName(), null);
       tracker.open();
-      
+
       StartLevel service = (StartLevel)tracker.getService();
       out.println("startLevel=" + (service != null ? service.getStartLevel() : 1));
     }
@@ -77,7 +75,7 @@ public class EndpointServlet extends HttpServlet
     {
       throw new IllegalArgumentException("Invalid 'test' parameter: " + testParam);
     }
-    
+
     out.close();
   }
 }
