@@ -21,15 +21,14 @@
  */
 package org.jboss.osgi.http.internal;
 
-//$Id$
-
 import org.ops4j.pax.web.service.jetty.internal.CompositeActivator;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 
+
 /**
  * An HttpService activator
- * 
+ *
  * @author thomas.diesler@jboss.com
  * @since 19-Apr-2010
  */

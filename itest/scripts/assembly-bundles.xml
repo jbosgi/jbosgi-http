@@ -15,8 +15,8 @@
       <outputDirectory>bundles</outputDirectory>
       <outputFileNameMapping>${artifact.artifactId}${dashClassifier?}.${artifact.extension}</outputFileNameMapping>
       <includes>
-        <include>*:jboss-osgi-common:jar</include>
-        <include>*:jboss-osgi-http:jar</include>
+        <include>*:jbosgi-http-api:jar</include>
+        <include>*:jbosgi-http:jar</include>
         <include>*:org.osgi.compendium:jar</include>
       </includes>
       <useStrictFiltering>true</useStrictFiltering>

@@ -62,7 +62,7 @@ public class HttpServiceTestCase extends OSGiFrameworkTest
          final JavaArchive archive = ShrinkWrap.create(JavaArchive.class, "http-service-test");
          archive.addClass(HttpServiceTestActivator.class);
          archive.addClass(EndpointServlet.class);
-         archive.addResource(getResourceFile("http/message.txt"), "res/message.txt");
+         archive.addAsResource(getResourceFile("http/message.txt"), "res/message.txt");
          archive.setManifest(new Asset()
          {
             public InputStream openStream()

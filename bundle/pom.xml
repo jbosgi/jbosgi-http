@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!-- ====================================================================== -->
-<!-- -->
-<!-- JBoss, the OpenSource J2EE webOS -->
-<!-- -->
-<!-- Distributable under LGPL license. -->
-<!-- See terms of license at http://www.gnu.org. -->
-<!-- -->
+<!--                                                                        -->
+<!-- JBoss, the OpenSource J2EE webOS                                       -->
+<!--                                                                        -->
+<!-- Distributable under LGPL license.                                      -->
+<!-- See terms of license at http://www.gnu.org.                            -->
+<!--                                                                        -->
 <!-- ====================================================================== -->
-
-<!-- $Id$ -->
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
@@ -17,13 +15,13 @@
   <name>JBossOSGi Http Bundle</name>
 
   <groupId>org.jboss.osgi.http</groupId>
-  <artifactId>jboss-osgi-http</artifactId>
+  <artifactId>jbosgi-http</artifactId>
   <packaging>bundle</packaging>
 
   <!-- Parent -->
   <parent>
     <groupId>org.jboss.osgi.http</groupId>
-    <artifactId>jboss-osgi-http-parent</artifactId>
+    <artifactId>jbosgi-http-parent</artifactId>
     <version>1.0.4-SNAPSHOT</version>
   </parent>
 
@@ -32,13 +30,13 @@
     <dependency>
       <groupId>org.jboss.osgi.spi</groupId>
       <artifactId>jbosgi-spi</artifactId>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.ops4j.pax.web</groupId>
       <artifactId>pax-web-jetty-bundle</artifactId>
+      <scope>provided</scope>
     </dependency>
-
-    <!-- Provided Dependencies -->
     <dependency>
       <groupId>org.osgi</groupId>
       <artifactId>org.osgi.core</artifactId>
@@ -76,11 +74,11 @@
               org.xml.sax*,
               
               <!-- javax.servlet -->
-              javax.servlet*;version="[2.5,3.0)",
+              javax.servlet;version="[2.5,3.0)",
+              javax.servlet.http;version="[2.5,3.0)",
               
               <!-- logging -->
               org.jboss.logging;version="[3.0,4.0)",
-              org.slf4j;version="[1.5,2.0)", 
               
               <!-- jboss-osgi --> 
               org.jboss.osgi.spi*;version="[1.0,2.0)", 
@@ -101,12 +99,12 @@
               !org.mortbay.log, 
               !org.mortbay.util.ajax, 
               !org.ops4j.pax.web.jsp, 
+              !org.slf4j, 
             </Import-Package>
             <Embed-Dependency>
               pax-web-jetty-bundle;inline=false
             </Embed-Dependency>
             <_exportcontents>
-              javax.servlet*;version=2.5,
               org.ops4j.pax.web.service;version=${version.ops4j.pax.web}
             </_exportcontents>
           </instructions>
