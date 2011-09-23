@@ -79,7 +79,8 @@
               
               <!-- logging -->
               org.jboss.logging;version="[3.0,4.0)",
-              
+              org.slf4j;version="[1.5,2.0)";resolution:=optional,
+               
               <!-- jboss-osgi --> 
               org.jboss.osgi.spi*;version="[1.0,2.0)", 
               
@@ -99,7 +100,6 @@
               !org.mortbay.log, 
               !org.mortbay.util.ajax, 
               !org.ops4j.pax.web.jsp, 
-              !org.slf4j, 
             </Import-Package>
             <Embed-Dependency>
               pax-web-jetty-bundle;inline=false
