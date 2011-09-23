@@ -18,7 +18,7 @@
   <artifactId>jbosgi-http-parent</artifactId>
   <packaging>pom</packaging>
 
-  <version>1.0.5-SNAPSHOT</version>
+  <version>1.0.5</version>
 
   <!-- Parent -->
   <parent>
